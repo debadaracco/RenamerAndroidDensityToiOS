@@ -25,7 +25,8 @@ do
 
 		for file in *.png
 		do
-			cp "$file" "../drawables-ios/$file$density.png"
+			new_name=$(echo $file | sed "s/.png/$density.png/")
+			cp "$file" "../drawables-ios/$new_name"
 		done
 
 		cd ".."
